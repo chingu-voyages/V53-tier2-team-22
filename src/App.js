@@ -27,40 +27,11 @@ function App() {
   };
 
   const exportToPDF = () => {
-    const doc = new jsPDF();
-    let yPos = 20;
-    
-    doc.setFontSize(18);
-    doc.text('Weekly Menu Schedule', 20, 15);
-    
-    doc.setFontSize(12);
-    menu.forEach((dish, index) => {
-      const dayName = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'][index];
-      if (dish) {
-        doc.text(`${dayName}: ${dish.name}`, 20, yPos);
-        doc.text(`Calories: ${dish.calories}`, 20, yPos + 7);
-        yPos += 20;
-      } else {
-        doc.text(`${dayName}: DAY OFF`, 20, yPos);
-        yPos += 10;
-      }
-    });
-    
-    doc.save('weekly-menu.pdf');
+   
   };
 
   const exportToExcel = () => {
-    const worksheetData = menu.map((dish, index) => ({
-      Day: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'][index],
-      Dish: dish?.name || 'Day Off',
-      Calories: dish?.calories || '-',
-      Ingredients: dish?.ingredients?.join(', ') || '-'
-    }));
-
-    const ws = XLSX.utils.json_to_sheet(worksheetData);
-    const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, "Menu");
-    XLSX.writeFile(wb, "weekly-menu.xlsx");
+   
   };
 
   return (
