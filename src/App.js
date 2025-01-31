@@ -79,7 +79,7 @@ function App() {
       </main>
 
       <footer>
-        <a href="https://github.com/your-team/menu-scheduler" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/chingu-voyages/V53-tier2-team-22" target="_blank" rel="noopener noreferrer">
           View Source on GitHub
         </a>
       </footer>
